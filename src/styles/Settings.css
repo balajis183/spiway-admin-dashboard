@@ -1,54 +1,56 @@
+/* Main Container */
 .settings-container {
   background: #f8f9fa;
-  /* padding: 20px; Matches dashboard padding    */
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  width: 100%; /* Full width like the header */
-  /* max-width: 1200px; Controlled max width   */
-  /* margin: 10px auto; Proper spacing   */
+  width: 100%;
+  /* max-width: 1200px; */
+  margin: auto;
+  padding: 20px;
   display: flex;
   flex-direction: column;
   gap: 20px;
 }
 
-/* Center Title */
+/* Title */
 .settings-container h2 {
-  font-size: 30px;
+  font-size: 24px;
   font-weight: bold;
-  margin-bottom: 20px; /* Matches dashboard-title */
-  margin-left: 10px;
+  text-align: left;
+  margin-bottom: 10px;
 }
 
-/* Profile Settings */
+/* Profile & Other Sections */
 .settings-section {
-  background: #f9f9f9;
-  padding: 20px; /* Matches stat-card padding */
+  background: #ffffff;
+  padding: 20px;
   border: 1px solid #ddd;
   border-radius: 10px;
   display: flex;
   flex-direction: column;
-  gap: 12px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Matches stat-card shadow */
-  transition: 0.3s ease; /* Smooth effect like stat-card */
+  gap: 15px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
 }
 
 .settings-section:hover {
-  transform: translateY(-3px); /* Subtle hover effect */
+  transform: translateY(-2px);
 }
 
 /* Section Title */
 .settings-section h3 {
-  font-size: 20px;
+  font-size: 18px;
   font-weight: bold;
-  margin-bottom: 10px;
   color: #333;
 }
 
-/* Form Inputs */
+/* Input Group */
 .input-group {
   display: flex;
   flex-direction: column;
   gap: 6px;
+  width: 100%;
+  max-width: 500px; /* Keeps inputs aligned */
 }
 
 .input-group label {
@@ -63,8 +65,7 @@
   border: 1px solid #ccc;
   border-radius: 5px;
   font-size: 14px;
-  width: 100%; /* Ensures proper sizing */
-  max-width: 400px; /* Keeps it neat */
+  width: 100%;
 }
 
 /* Toggle Switch */
@@ -99,39 +100,62 @@
   background: #0056b3;
 }
 
-/* Responsive Design */
+/* 🔹 RESPONSIVE DESIGN 🔹 */
+
+/* Medium Screens (Tablets & Small Laptops) */
 @media (max-width: 1024px) {
   .settings-container {
-    max-width: 100%;
-  }
-}
-
-@media (max-width: 768px) {
-  .settings-container {
-    max-width: 95%;
-    padding: 20px; /* Matches dashboard */
-  }
-
-  .settings-section {
-    padding: 20px; /* Matches stat-card */
-  }
-
-  .input-group input {
-    max-width: 100%;
-  }
-}
-
-@media (max-width: 480px) {
-  .settings-container {
-    max-width: 100%;
-    padding: 15px; /* Matches stat-card mobile padding */
+    max-width: 90%;
+    padding: 15px;
   }
 
   .settings-section {
     padding: 15px;
   }
+}
+
+/* Small Screens (Mobile Devices) */
+@media (max-width: 768px) {
+  .settings-container {
+    max-width: 100%;
+    padding: 10px;
+  }
+
+  .settings-section {
+    padding: 10px;
+  }
 
   .settings-container h2 {
     font-size: 20px;
+    text-align: center;
+  }
+
+  .input-group {
+    max-width: 100%;
+  }
+
+  .save-btn {
+    width: 100%; /* Full width for better mobile UX */
+    text-align: center;
+  }
+}
+
+/* Extra Small Screens */
+@media (max-width: 480px) {
+  .settings-container {
+    padding: 8px;
+  }
+
+  .settings-section {
+    padding: 10px;
+  }
+
+  .settings-container h2 {
+    font-size: 18px;
+  }
+
+  .toggle {
+    flex-direction: column;
+    align-items: flex-start;
   }
 }

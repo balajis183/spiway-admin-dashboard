@@ -4,7 +4,7 @@ import Dashboard from './components/Dashboard';
 import Header from './components/Header';
 import Sidebar from './components/Sidebar';
 // import Analytics from './components/Analytics';
-// import Users from './components/Users';
+import UserList from './components/UserList';
 import Settings from './components/Settings';
 import Signup from './components/Signup';
 
@@ -19,7 +19,7 @@ function App() {
             <Route path="/" element={<Navigate to="/dashboard" />} />
             <Route path="/dashboard" element={<Dashboard />} />
             {/* <Route path="/analytics" element={<Analytics />} /> */}
-            {/* <Route path="/users" element={<Users />} /> */}
+            <Route path="/users" element={<UserList />} />
             <Route path="/settings" element={<Settings />} />
             <Route path="/signup" element={<Signup />} />
           </Routes>
