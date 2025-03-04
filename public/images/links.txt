@@ -1,0 +1,1 @@
+https://react.dev/blog/2025/02/14/sunsetting-create-react-app

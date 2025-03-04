@@ -1,0 +1,33 @@
+.chart-container {
+  text-align: center;
+}
+
+/* Keep h3 styling unchanged */
+.chart-container h3 {
+  margin-bottom: 20px;
+  font-size: 18px;
+}
+
+/* Medium Screens (Tablets) */
+@media (max-width: 1024px) {
+  .chart-container {
+      width: 95%;
+      margin: auto;
+  }
+}
+
+/* Small Screens (Mobiles) */
+@media (max-width: 768px) {
+  .chart-container {
+      width: 100%;
+      padding: 10px;
+  }
+}
+
+/* Extra Small Screens (Phones <480px) */
+@media (max-width: 480px) {
+  .chart-container {
+      width: 100%;
+      padding: 5px;
+  }
+}

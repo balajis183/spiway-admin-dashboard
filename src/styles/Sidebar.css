@@ -1,0 +1,79 @@
+.sidebar {
+  width: 225px;
+  height: 100vh;
+  background-color: #2a2d3e;
+  color: white;
+  padding: 20px;
+  transition: width 0.3s;
+}
+
+.sidebar.collapsed {
+  width: 110px;
+}
+
+.toggle-btn {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+.menu {
+  list-style: none;
+  padding: 0;
+}
+
+.menu li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 15px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.menu li:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+
+.toggle-btn {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Space between icon and text */
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #333; /* Adjust color if needed */
+  }
+  
+  .toggle-icon {
+    width: 32px; /* Adjust size */
+    height: 32px;
+    border-radius: 50%; /* Makes it rounded */
+    color: white;
+  }
+  
+  .logo-text {
+    font-family: Arial, sans-serif;
+    color: white;
+  }
+  
+
+  /* Remove default link styles */
+.menu-item {
+  text-decoration: none;
+  color: inherit;  /* Keeps original text/icon color */
+  display: flex;
+  align-items: center;
+  gap: 10px;  /* Keeps spacing between icon and text */
+  padding: 10px;
+  transition: background 0.3s ease;
+}
+
+
