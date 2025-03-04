@@ -1,0 +1,137 @@
+.settings-container {
+  background: #f8f9fa;
+  /* padding: 20px; Matches dashboard padding    */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 100%; /* Full width like the header */
+  /* max-width: 1200px; Controlled max width   */
+  /* margin: 10px auto; Proper spacing   */
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Center Title */
+.settings-container h2 {
+  font-size: 30px;
+  font-weight: bold;
+  margin-bottom: 20px; /* Matches dashboard-title */
+  margin-left: 10px;
+}
+
+/* Profile Settings */
+.settings-section {
+  background: #f9f9f9;
+  padding: 20px; /* Matches stat-card padding */
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Matches stat-card shadow */
+  transition: 0.3s ease; /* Smooth effect like stat-card */
+}
+
+.settings-section:hover {
+  transform: translateY(-3px); /* Subtle hover effect */
+}
+
+/* Section Title */
+.settings-section h3 {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+/* Form Inputs */
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.input-group label {
+  font-size: 14px;
+  font-weight: bold;
+  color: #555;
+}
+
+.input-group input,
+.input-group select {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+  width: 100%; /* Ensures proper sizing */
+  max-width: 400px; /* Keeps it neat */
+}
+
+/* Toggle Switch */
+.toggle {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.toggle input {
+  transform: scale(1.2);
+  cursor: pointer;
+}
+
+/* Save Button */
+.save-btn {
+  background: #007bff;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: bold;
+  transition: background 0.3s ease;
+  align-self: flex-start;
+}
+
+.save-btn:hover {
+  background: #0056b3;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .settings-container {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .settings-container {
+    max-width: 95%;
+    padding: 20px; /* Matches dashboard */
+  }
+
+  .settings-section {
+    padding: 20px; /* Matches stat-card */
+  }
+
+  .input-group input {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .settings-container {
+    max-width: 100%;
+    padding: 15px; /* Matches stat-card mobile padding */
+  }
+
+  .settings-section {
+    padding: 15px;
+  }
+
+  .settings-container h2 {
+    font-size: 20px;
+  }
+}

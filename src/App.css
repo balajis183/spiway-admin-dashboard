@@ -54,7 +54,19 @@
 /* Main Content */
 .main-content {
   flex: 1; /* ✅ Takes remaining width */
-  padding: 20px; /* Add spacing */
+  padding: 15px; /* Add spacing */
   overflow-y: auto; /* Allows scrolling */
 }
   
+
+/* Prevent double scrollbar */
+html, body {
+  overflow: hidden;  /* Disable body scrolling */
+  height: 100%;
+}
+
+/* Ensure the main content scrolls properly */
+.main-content {
+  overflow-y: auto;  /* Enables scrolling only inside main-content */
+  height: 100vh;
+}

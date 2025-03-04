@@ -5,7 +5,7 @@ import Header from './components/Header';
 import Sidebar from './components/Sidebar';
 // import Analytics from './components/Analytics';
 // import Users from './components/Users';
-// import Settings from './components/Settings';
+import Settings from './components/Settings';
 import Signup from './components/Signup';
 
 function App() {
@@ -20,7 +20,7 @@ function App() {
             <Route path="/dashboard" element={<Dashboard />} />
             {/* <Route path="/analytics" element={<Analytics />} /> */}
             {/* <Route path="/users" element={<Users />} /> */}
-            {/* <Route path="/settings" element={<Settings />} /> */}
+            <Route path="/settings" element={<Settings />} />
             <Route path="/signup" element={<Signup />} />
           </Routes>
         </div>
