@@ -3,10 +3,10 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-d
 import Dashboard from './components/Dashboard';
 import Header from './components/Header';
 import Sidebar from './components/Sidebar';
-// import Analytics from './components/Analytics';
 import UserList from './components/UserList';
 import Settings from './components/Settings';
 import Signup from './components/Signup';
+import AnalyticsDashboard from './components/AnalyticsDashboard';
 
 function App() {
   return (
@@ -18,7 +18,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Navigate to="/dashboard" />} />
             <Route path="/dashboard" element={<Dashboard />} />
-            {/* <Route path="/analytics" element={<Analytics />} /> */}
+            <Route path="/analytics" element={<AnalyticsDashboard />} />
             <Route path="/users" element={<UserList />} />
             <Route path="/settings" element={<Settings />} />
             <Route path="/signup" element={<Signup />} />

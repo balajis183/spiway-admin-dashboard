@@ -44,7 +44,7 @@ const Dashboard = () => {
 
       {/* Chart Section */}
       <div className="chart-section">
-        <Chart /> {/* ✅ Ensure you have a Chart.js file for this to work */}
+        <Chart />  {/* Ensure you have a Chart.js file for this to work */}
       </div>
     </div>
   );

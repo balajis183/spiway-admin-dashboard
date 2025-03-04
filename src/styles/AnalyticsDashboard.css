@@ -1,0 +1,122 @@
+/* Main Analytics Container */
+.analytics-container {
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  /* Section Title */
+  .analytics-container h2 {
+    font-size: 28px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #343a40;
+  }
+  
+  /* Key Metrics */
+  .analytics-metrics {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Adapts to screen */
+    gap: 15px;
+  }
+  
+  .metric-card {
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    transition: 0.3s ease-in-out;
+  }
+  
+  .metric-card:hover {
+    transform: translateY(-3px);
+  }
+  
+  .metric-card h3 {
+    font-size: 20px;
+    color: #495057;
+    margin-bottom: 5px;
+  }
+  
+  .metric-card p {
+    font-size: 24px;
+    color: #007bff;
+    font-weight: bold;
+    margin-top: 5px;
+  }
+  
+  /* Charts Section */
+  .analytics-charts {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); /* Charts align properly */
+    gap: 20px;
+  }
+  
+  .chart-container {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  .chart-container h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #495057;
+  }
+  
+  /* Chart Canvas Styling */
+  .chart-container canvas {
+    max-width: 100%;
+    height: auto !important;
+  }
+  
+  /* 📌 Responsive Design */
+  @media (max-width: 1024px) {
+    .analytics-metrics {
+      grid-template-columns: repeat(2, 1fr); /* 2 items per row */
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .analytics-container {
+      padding: 15px;
+    }
+  
+    .analytics-metrics {
+      grid-template-columns: repeat(1, 1fr); /* 1 item per row */
+    }
+  
+    .metric-card {
+      width: 100%;
+    }
+  
+    .analytics-charts {
+      grid-template-columns: repeat(1, 1fr); /* Stack charts */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .analytics-container h2 {
+      font-size: 24px;
+    }
+  
+    .metric-card p {
+      font-size: 20px;
+    }
+  
+    .chart-container h3 {
+      font-size: 16px;
+    }
+  }
+  
