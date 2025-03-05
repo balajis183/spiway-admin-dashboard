@@ -1,0 +1,133 @@
+/* Centering and Background */
+.auth-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: url("../../public/images/jess-bailey-UHqfUTDmdC4-unsplash.jpg") no-repeat center center;
+    background-size: cover;
+    padding: 20px;
+}
+
+/* Login Card */
+.auth-card {
+    background: rgba(255, 255, 255, 0.85);
+    padding: 30px;
+    width: 100%;
+    max-width: 350px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* Heading */
+.auth-card h2 {
+    margin-bottom: 15px;
+    font-size: 22px;
+    color: #333;
+}
+
+/* Form Group */
+.form-group {
+    margin-bottom: 14px; /* Increased gap slightly */
+    text-align: left;
+}
+
+/* Form Labels */
+.form-group label {
+    display: block;
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 4px;
+}
+
+/* Form Inputs */
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    color: #333;
+}
+
+/* Light Placeholder */
+.form-group input::placeholder {
+    color: rgba(0, 0, 0, 0.3);
+    font-size: 13px;
+}
+
+/* Spacing After Password Field */
+.form-group:last-of-type {
+    margin-bottom: 18px; /* Adds a small gap before the login button */
+}
+
+/* Error Message */
+.error-text {
+    color: red;
+    font-size: 13px;
+    margin-top: 5px;
+}
+
+/* Login Button */
+button {
+    width: 100%;
+    padding: 12px; /* Slightly increased padding for a better feel */
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    margin-bottom: 10px; /* Added small space below button */
+}
+
+button:hover {
+    background: #0056b3;
+}
+
+/* Signup Link */
+.auth-card p {
+    font-size: 14px;
+    color: #555;
+    margin-top: 10px;
+}
+
+.auth-card a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.auth-card a:hover {
+    text-decoration: underline;
+}
+
+/* 🔥 Responsive Design */
+@media (max-width: 768px) {
+    .auth-card {
+        padding: 25px;
+        width: 90%;
+    }
+}
+
+@media (max-width: 480px) {
+    .auth-card {
+        padding: 22px;
+        width: 100%;
+    }
+
+    .auth-card h2 {
+        font-size: 20px;
+    }
+
+    .form-group input {
+        padding: 9px;
+        font-size: 13px;
+    }
+
+    button {
+        padding: 10px;
+        font-size: 15px;
+    }
+}

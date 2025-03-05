@@ -7,6 +7,7 @@ import UserList from './components/UserList';
 import Settings from './components/Settings';
 import Signup from './components/Signup';
 import AnalyticsDashboard from './components/AnalyticsDashboard';
+import Login from './components/Login';
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
             <Route path="/users" element={<UserList />} />
             <Route path="/settings" element={<Settings />} />
             <Route path="/signup" element={<Signup />} />
+            <Route path="login" element={<Login/>} />
           </Routes>
         </div>
       </div>

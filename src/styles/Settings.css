@@ -94,6 +94,8 @@
   font-weight: bold;
   transition: background 0.3s ease;
   align-self: flex-start;
+  width:auto;
+  min-width: 120px;
 }
 
 .save-btn:hover {

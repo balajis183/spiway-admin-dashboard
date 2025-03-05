@@ -110,6 +110,7 @@ const AnalyticsDashboard = () => {
         </div>
         <div className="chart-container">
           <h3>Device Usage Distribution</h3>
+
           <Pie data={deviceUsageData} />
         </div>
         <div className="chart-container">

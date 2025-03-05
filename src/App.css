@@ -54,7 +54,7 @@
 /* Main Content */
 .main-content {
   flex: 1; /* ✅ Takes remaining width */
-  padding: 15px; /* Add spacing */
+  /* padding: 15px;  
   overflow-y: auto; /* Allows scrolling */
 }
   

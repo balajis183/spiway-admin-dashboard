@@ -21,7 +21,7 @@ const Chart = () => {
           <YAxis />
           <CartesianGrid strokeDasharray="3 3" />
           <Tooltip />
-          <Line type="monotone" dataKey="installs" stroke="#007bff" strokeWidth={2} />
+          <Line type="monotone" dataKey="installs" stroke="#007bff" strokeWidth={3} />
         </LineChart>
       </ResponsiveContainer>
     </div>

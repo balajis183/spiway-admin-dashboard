@@ -1,55 +1,128 @@
-.signup-container {
-    width: 100%;
-    max-width: 400px;
-    margin: 50px auto;
+/* Centering and Background */
+.auth-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: url("../../public/images/jess-bailey-UHqfUTDmdC4-unsplash.jpg") no-repeat center center;
+  background-size: cover;
+  padding: 20px;
+}
+
+/* Signup Card */
+.auth-card {
+  background:rgba(194, 190, 190, 0.973);
+  background-color: transparent;
+  padding: 30px;
+  width: 100%;
+  max-width: 350px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+/* Signup Heading */
+.auth-card h2 {
+  margin-bottom: 15px;
+  font-size: 22px;
+  color: #333;
+}
+
+/* Form Group */
+.form-group {
+  margin-bottom: 12px; /* Slightly reduced spacing */
+  text-align: left;
+}
+
+/* Form Labels */
+.form-group label {
+  display: block;
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 3px; /* Small gap between label and input */
+}
+
+/* Form Inputs */
+.form-group input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+  color: #333;
+}
+
+/* Light Placeholder */
+.form-group input::placeholder {
+  color: rgba(0, 0, 0, 0.3);
+  font-size: 13px;
+}
+
+/* Error Message */
+.error-text {
+  color: red;
+  font-size: 13px;
+  margin-top: 5px;
+}
+
+/* Signup Button */
+button {
+  width: 100%;
+  padding: 10px;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background: #0056b3;
+}
+
+/* Already have an account? */
+.auth-card p {
+  font-size: 14px;
+  color: #555;
+  margin-top: 10px;
+}
+
+.auth-card a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.auth-card a:hover {
+  text-decoration: underline;
+}
+
+/* 🔥 Responsive Design */
+@media (max-width: 768px) {
+  .auth-card {
+    padding: 25px;
+    width: 90%;
+  }
+}
+
+@media (max-width: 480px) {
+  .auth-card {
     padding: 20px;
-    background: white;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    text-align: center;
+    width: 100%;
   }
-  
-  .signup-container h2 {
-    margin-bottom: 20px;
+
+  .auth-card h2 {
+    font-size: 20px;
   }
-  
-  .signup-container form {
-    display: flex;
-    flex-direction: column;
+
+  .form-group input {
+    padding: 8px;
+    font-size: 13px;
   }
-  
-  .signup-container input {
-    margin-bottom: 15px;
-    padding: 10px;
-    font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-  }
-  
-  .signup-container .error {
-    color: red;
+
+  button {
+    padding: 8px;
     font-size: 14px;
   }
-  
-  .signup-container button {
-    background: #007bff;
-    color: white;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-  }
-  
-  .signup-container button:hover {
-    background: #0056b3;
-  }
-  
-  /* Responsive */
-  @media (max-width: 480px) {
-    .signup-container {
-      width: 90%;
-      padding: 15px;
-    }
-  }
-  
+}
