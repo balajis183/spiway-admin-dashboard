@@ -1,32 +1,38 @@
-import './App.css';
-import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
-import Dashboard from './components/Dashboard';
-import Header from './components/Header';
-import Sidebar from './components/Sidebar';
-import UserList from './components/UserList';
-import Settings from './components/Settings';
-import Signup from './components/Signup';
-import AnalyticsDashboard from './components/AnalyticsDashboard';
-import Login from './components/Login';
+import "./App.css";
+import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
+import Layout from "./components/Layout"; // Import new Layout
+import Dashboard from "./components/Dashboard";
+import UserList from "./components/UserList";
+import Settings from "./components/Settings";
+import Signup from "./components/Signup";
+import AnalyticsDashboard from "./components/AnalyticsDashboard";
+import Login from "./components/Login";
 
 function App() {
   return (
     <Router>
-      <div className="app-container">
-        <Sidebar />
-        <div className="main-content">
-          <Header />
-          <Routes>
-            <Route path="/" element={<Navigate to="/signup" />} />
-            <Route path="/dashboard" element={<Dashboard />} />
-            <Route path="/analytics" element={<AnalyticsDashboard />} />
-            <Route path="/users" element={<UserList />} />
-            <Route path="/settings" element={<Settings />} />
-            <Route path="/signup" element={<Signup />} />
-            <Route path="login" element={<Login/>} />
-          </Routes>
-        </div>
-      </div>
+      <Routes>
+        {/* Signup/Login without Sidebar/Header */}
+        <Route path="/" element={<Navigate to="/signup" />} />
+        <Route path="/signup" element={<Signup />} />
+        <Route path="/login" element={<Login />} />
+
+        {/* Protected Routes inside Layout */}
+        <Route
+          path="/*"
+          element={
+            <Layout>
+              <Routes>
+                <Route path="dashboard" element={<Dashboard />} />
+                <Route path="analytics" element={<AnalyticsDashboard />} />
+                <Route path="users" element={<UserList />} />
+                <Route path="settings" element={<Settings />} />
+                <Route path="*" element={<Navigate to="/dashboard" />} />
+              </Routes>
+            </Layout>
+          }
+        />
+      </Routes>
     </Router>
   );
 }
