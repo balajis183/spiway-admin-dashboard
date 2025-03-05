@@ -17,7 +17,7 @@ function App() {
         <div className="main-content">
           <Header />
           <Routes>
-            <Route path="/" element={<Navigate to="/dashboard" />} />
+            <Route path="/" element={<Navigate to="/signup" />} />
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/analytics" element={<AnalyticsDashboard />} />
             <Route path="/users" element={<UserList />} />

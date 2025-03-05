@@ -1,16 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 import "../styles/Header.css";
-import { FaBell, FaUserCircle, FaSun, FaMoon } from "react-icons/fa";
+import { Link } from "react-router-dom";
+import { FaBell, FaEnvelope, FaQuestionCircle, FaCog } from "react-icons/fa";
 
 const Header = () => {
-  const [theme, setTheme] = useState("light");
-
-  const toggleTheme = () => {
-    const newTheme = theme === "light" ? "dark" : "light";
-    setTheme(newTheme);
-    document.body.setAttribute("data-theme", newTheme);
-  };
-
   return (
     <header className="header">
       <div className="header-left">
@@ -18,11 +11,12 @@ const Header = () => {
       </div>
 
       <div className="header-right">
-        <FaBell className="icon notification-icon" />
-        <div className="theme-toggle" onClick={toggleTheme}>
-          {theme === "light" ? <FaMoon className="icon" /> : <FaSun className="icon" />}
-        </div>
-        <FaUserCircle className="icon user-icon" />
+        <FaBell className="icon notification-icon" title="Notifications" />
+        <FaEnvelope className="icon contact-icon" title="Messages" />
+        <FaQuestionCircle className="icon help-icon" title="Help & Support" />
+        <Link to="/settings">
+          <FaCog className="icon settings-icon" title="Settings" />
+        </Link>
       </div>
     </header>
   );
