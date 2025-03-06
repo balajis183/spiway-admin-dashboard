@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/spiway-admin-dashboard/static/css/main.ef63ecb2.css",
-    "main.js": "/spiway-admin-dashboard/static/js/main.369b1355.js",
+    "main.js": "/spiway-admin-dashboard/static/js/main.cf57dea4.js",
     "static/js/453.3b2d1347.chunk.js": "/spiway-admin-dashboard/static/js/453.3b2d1347.chunk.js",
     "static/media/jess-bailey-UHqfUTDmdC4-unsplash.jpg": "/spiway-admin-dashboard/static/media/jess-bailey-UHqfUTDmdC4-unsplash.e3105910f40f9efbf8b2.jpg",
     "index.html": "/spiway-admin-dashboard/index.html",
     "main.ef63ecb2.css.map": "/spiway-admin-dashboard/static/css/main.ef63ecb2.css.map",
-    "main.369b1355.js.map": "/spiway-admin-dashboard/static/js/main.369b1355.js.map",
+    "main.cf57dea4.js.map": "/spiway-admin-dashboard/static/js/main.cf57dea4.js.map",
     "453.3b2d1347.chunk.js.map": "/spiway-admin-dashboard/static/js/453.3b2d1347.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.ef63ecb2.css",
-    "static/js/main.369b1355.js"
+    "static/js/main.cf57dea4.js"
   ]
 }
