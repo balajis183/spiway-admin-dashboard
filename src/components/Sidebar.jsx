@@ -9,7 +9,7 @@ const Sidebar = () => {
   return (
     <div className={`sidebar ${isCollapsed ? "collapsed" : ""}`}>
       <button className="toggle-btn" onClick={() => setIsCollapsed(!isCollapsed)}>
-        <img src="/images/spiway-icon.png" alt="Spiway Logo" className="toggle-icon" />
+        <img src="/assets/spiway-icon.png" alt="Spiway Logo" className="toggle-icon" />
         <span className="logo-text">Spiway</span>
       </button>
 
