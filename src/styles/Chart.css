@@ -19,7 +19,7 @@
 /* Small Screens (Mobiles) */
 @media (max-width: 768px) {
   .chart-container {
-      width: 100%;
+      width: 90%;
       padding: 10px;
   }
 }

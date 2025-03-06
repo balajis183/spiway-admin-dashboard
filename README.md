@@ -1,70 +1,123 @@
-# Getting Started with Create React App
+# Spiway Admin Dashboard
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Description
+Spiway Admin Dashboard is a modern and interactive dashboard designed for the **Spiway application**, displaying its key statistics and insights. It provides efficient user data management and analytics. The dashboard features a visually appealing UI with a collapsible sidebar for easy navigation. The website is mostly responsive and provides a seamless user experience.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+### 🌟 Signup & Login Page (UI-Only)
+- The homepage consists of a **signup and login page**, which is currently a UI layout without functionality.
+- Once users log in, they will access the dashboard.
 
-### `npm start`
+### 📌 Interactive Sidebar
+- The **collapsible sidebar** enhances user navigation.
+- It contains navigation links to the following sections:
+  - **📊 Dashboard** – Displays key app statistics.
+  - **👥 Users** – Lists user details such as name, email, role, status, and last seen.
+  - **📈 Analytics** – Provides visual insights through line charts, bar charts, and pie charts.
+  - **⚙️ Settings** – Currently UI-only, with future enhancements planned.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### 📊 Dashboard
+- Shows essential statistics about the **Spiway application**, such as **total installs, daily installs, and active users**.
+- Clean and structured layout for better readability.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### 👥 Users Section
+- Displays user details such as:
+  - **Name**
+  - **Email**
+  - **Role** (e.g., admin, user, moderator)
+  - **Status** (Active/Inactive)
+  - **Last Seen** (Displays the last active time instead of a timestamp)
 
-### `npm test`
+### 📈 Analytics Section
+- Provides key performance metrics, including:
+  - **Total Users**
+  - **Active Users**
+  - **New Users**
+  - **Retention Rate**
+- Includes **multiple charts for better insights**:
+  - 📉 **Line Chart** – Shows user growth over time.
+  - 📊 **Bar Chart** – Displays engagement metrics in a rectangular container.
+  - 🥧 **Pie Chart** – Represents device usage distribution.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### 🔝 Header
+- Displays the **title**: "Spiway Dashboard".
+- Includes interactive **icons**:
+  - 🔔 Notifications
+  - ✉️ Messages
+  - ❓ Help & Support
+  - ⚙️ Settings (Linked to the settings page)
 
-### `npm run build`
+### 🖥️ Main Content Area
+- Dynamically updates based on the selected section from the sidebar (Dashboard, Users, Analytics, or Settings).
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### 🌍 Browser Tab Customization
+- Includes a **custom tab title and icon** for better identification.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## 🚀 Deployment
+**Live Demo:** [Spiway Admin Dashboard](https://balajis183.github.io/spiway-admin-dashboard/)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+**Note:** For a better experience on mobile, **enable Desktop Site mode** for better responsiveness.
 
-### `npm run eject`
+## 📥 Installation & Setup
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+To run the project locally, follow these steps:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/balajis183/spiway-admin-dashboard.git
+   ```
+2. Navigate into the project directory:
+   ```bash
+   cd spiway-admin-dashboard
+   ```
+3. Install dependencies:
+   ```bash
+   npm install
+   ```
+4. Start the development server:
+   ```bash
+   npm start
+   ```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## 🌐 Tech Stack
+- **React.js** – Core framework for building the dashboard.
+- **HTML, CSS, JSX** – UI structure and styling.
+- **Media Queries** – Ensuring responsiveness across devices.
+- **Chart.js** – For visualizing analytics with line, bar, and pie charts.
+- **React Router** – For navigation between pages.
+- **GitHub Pages** – Used for deployment.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## 📌 Additional Notes
+- The dashboard currently **uses mock data**, and some features are not yet functional.
+- The **signup and login pages** are UI-only, with backend integration planned for future updates.
+- A `deployment.md` file is available in the repository, detailing the deployment process.
+- If the direct link does not work, copy and paste the following into your browser:
+  ```bash
+  https://balajis183.github.io/spiway-admin-dashboard/
+  ```
 
-## Learn More
+## 🔮 Future Enhancements
+- **API Integration** – Connect real-time user data.
+- **Authentication System** – Implement user login/signup functionality.
+- **Role-based Access Control** – Different dashboards based on user roles.
+- **Enhanced Mobile Responsiveness** – Optimize UI for better mobile experience.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## 🤝 Contributing
+Contributions are welcome! If you'd like to contribute:
+- Fork the repository.
+- Submit a pull request with your changes.
+- For major changes, open an issue to discuss improvements.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## 📬 Contact
+If you have any questions or feedback, feel free to reach out:
 
-### Code Splitting
+- **GitHub**: [balajis183](https://github.com/balajis183)
+- **Email**: sbalaji2000s@gmail.com
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+---
+Thank you for exploring **Spiway Admin Dashboard**! 😊
+```bash
+https://github.com/balajis183
+```
 
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
