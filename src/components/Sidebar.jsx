@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "../styles/Sidebar.css";
+import logo from "../assets/icon.png";
 import { FaHome, FaUser, FaChartBar, FaCog } from "react-icons/fa";
 
 const Sidebar = () => {
@@ -9,7 +10,8 @@ const Sidebar = () => {
   return (
     <div className={`sidebar ${isCollapsed ? "collapsed" : ""}`}>
       <button className="toggle-btn" onClick={() => setIsCollapsed(!isCollapsed)}>
-        <img src="/assets/spiway-icon.png" alt="Spiway Logo" className="toggle-icon" />
+      {/* <img src={`${process.env.PUBLIC_URL}/assets/spiway-icon.png`} alt="Spiway Logo" className="toggle-icon" />  // use this one if needed */}
+        <img src={logo} alt="Spiway Logo" className="toggle-icon" />
         <span className="logo-text">Spiway</span>
       </button>
 
