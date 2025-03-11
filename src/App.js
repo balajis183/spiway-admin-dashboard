@@ -14,7 +14,7 @@ function App() {
     <Router>
       <Routes>
         {/* Signup/Login without Sidebar/Header */}
-        <Route path="/" element={<Navigate to="/signup" />} />
+        <Route path="/" element={<Navigate to="/login" />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<Login/>} />
 

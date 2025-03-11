@@ -29,7 +29,7 @@
 
   animation: changeBackground 25s infinite linear;
   animation-delay: 5s;  /*  Wait 5 seconds before starting */
-  transition: background-image 3.5s ease-in-out;
+  transition: background-image 2s ease-in-out;
 }
 
 
