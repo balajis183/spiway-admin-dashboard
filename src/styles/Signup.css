@@ -36,7 +36,7 @@
 
 /* 🔹 Signup Card */
 .auth-card {
-  background: rgba(255, 255, 255, 0.85); /* White with slight transparency */
+  background: rgba(255, 255, 255, 0.75); /* White with slight transparency */
   padding: 20px 30px; /*  Increased right padding */
   width: 100%;
   max-width: 450px;
