@@ -62,11 +62,12 @@
 /* Prevent double scrollbar */
 html, body {
   overflow: hidden;  /* Disable body scrolling */
-  height: 100%;
+  height: 100dvh;
 }
 
 /* Ensure the main content scrolls properly */
 .main-content {
   overflow-y: auto;  /* Enables scrolling only inside main-content */
-  height: 100vh;
+  /* height: 100vh; */
+  min-height: 100vh; /* Prevents layout breaking */
 }
