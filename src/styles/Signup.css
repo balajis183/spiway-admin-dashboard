@@ -1,12 +1,38 @@
 /* 🔹 Centering and Background */
-.auth-container {
+/* .auth-container {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
   background: url("../../public/assets/background-best.jpg ") no-repeat center center / cover ;
   padding: 20px;
+} */
+
+
+@keyframes changeBackground {
+  0% { background-image: url("../../public/assets/background-best.jpg"); }
+  25% { background-image: url("../../public/assets/background-13.jpg"); }
+  50% { background-image: url("../../public/assets/background-15.jpg"); }
+  75% { background-image: url("../../public/assets/background -transtition.jpg"); } 
+  100% {background-image: url("../../public/assets/background-best.jpg")}
 }
+
+.auth-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: url("../../public/assets/background-best.jpg") no-repeat center center / cover;
+  background-size: cover;
+  background-position: center;
+  padding: 20px;
+
+  animation: changeBackground 20s infinite linear;
+  animation-delay: 5s;  /*  Wait 5 seconds before starting */
+  transition: background-image 3s ease-in-out;
+}
+
+
 
 /* 🔹 Signup Card */
 .auth-card {

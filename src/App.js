@@ -28,7 +28,7 @@ function App() {
                 <Route path="analytics" element={<AnalyticsDashboard />} />
                 <Route path="users" element={<UserList />} />
                 <Route path="settings" element={<Settings />} />
-                <Route path="*" element={<Navigate to="/login" />} />
+                <Route path="*" element={<Navigate to="/signup" />} />
               </Routes>
             </Layout>
           }
