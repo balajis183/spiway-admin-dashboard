@@ -27,9 +27,9 @@
   background-position: center;
   padding: 20px;
 
-  animation: changeBackground 20s infinite linear;
+  animation: changeBackground 25s infinite linear;
   animation-delay: 5s;  /*  Wait 5 seconds before starting */
-  transition: background-image 3s ease-in-out;
+  transition: background-image 3.5s ease-in-out;
 }
 
 
