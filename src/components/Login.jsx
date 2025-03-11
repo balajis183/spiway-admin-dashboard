@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import "../styles/Login.css";
+import "../styles/Signup.css"; // Reusing styles
+import spiwayLogo from "../assets/icon.png"; // Import Spiway logo
 
 const Login = () => {
   const [formData, setFormData] = useState({
@@ -18,9 +19,13 @@ const Login = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // Simple validation
+    // Validation
     if (formData.email === "" || formData.password === "") {
       setError("All fields are required!");
+      return;
+    }
+    if (formData.password.length < 6) {
+      setError("Password must be at least 6 characters!");
       return;
     }
 
@@ -34,6 +39,13 @@ const Login = () => {
   return (
     <div className="auth-container">
       <div className="auth-card">
+        {/* 🏆 Spiway Logo */}
+        <img src={spiwayLogo} alt="Spiway Logo" className="spiway-logo" />
+
+        {/* 🎉 Welcome Message */}
+        <h3 className="welcome-text">Welcome to Spiway!</h3>
+        <p className="welcome-subtext">Login to access the dashboard.</p>
+
         <h2>Login</h2>
         <form onSubmit={handleSubmit}>
           <div className="form-group">
@@ -68,6 +80,13 @@ const Login = () => {
         <p className="signup-link">
           New here? <Link to="/signup">Create an account</Link>
         </p>
+
+        {/* 📌 Terms and Conditions */}
+        <div className="auth-footer">
+          <p>
+            By logging in, you agree to our <Link to="/terms">Terms & Conditions</Link> and <Link to="/privacy">Privacy Policy</Link>.
+          </p>
+        </div>
       </div>
     </div>
   );

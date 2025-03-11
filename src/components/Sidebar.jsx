@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "../styles/Sidebar.css";
 import logo from "../assets/icon.png";
-import { FaHome, FaUser, FaChartBar, FaCog } from "react-icons/fa";
+import { FaHome, FaUser, FaChartBar, FaCog ,FaSignOutAlt} from "react-icons/fa";
 
 const Sidebar = () => {
   const [isCollapsed, setIsCollapsed] = useState(false);
@@ -34,6 +34,11 @@ const Sidebar = () => {
         <li>
           <Link to="/settings" className="menu-item">
             <FaCog size={22} /> {!isCollapsed && "Settings"}
+          </Link>
+        </li>
+        <li className="logout">
+          <Link to="/login" className="menu-item logout-item">
+            <FaSignOutAlt size={22} /> {!isCollapsed && "Logout"}
           </Link>
         </li>
       </ul>

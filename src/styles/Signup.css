@@ -4,36 +4,36 @@
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background: url("../../public/assets/background.png") no-repeat center center / cover;
+  background: url("../../public/assets/background-best.jpg ") no-repeat center center / cover ;
   padding: 20px;
 }
 
 /* 🔹 Signup Card */
 .auth-card {
-  background: rgba(194, 190, 190, 0.973);
-  padding: 30px 50px 30px 30px; /* 🔥 Increased right padding */
+  background: rgba(255, 255, 255, 0.85); /* White with slight transparency */
+  padding: 20px 30px; /*  Increased right padding */
   width: 100%;
-  max-width: 400px;
-  border-radius: 20px;
+  max-width: 450px;
+  border-radius: 15px;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
   text-align: center;
 }
 
-/* 🔹 Signup Heading */
+/*  Signup Heading */
 .auth-card h2 {
   margin-bottom: 15px;
   font-size: 22px;
   color: #333;
 }
 
-/* 🔹 Form Group */
+/*  Form Group */
 .form-group {
   margin-bottom: 12px;
   text-align: left;
   padding-right: 10px; /* 🔥 Added extra right padding */
 }
 
-/* 🔹 Form Input Fields */
+/*  Form Input Fields */
 .form-group input {
   width: 100%;
   padding: 10px;
@@ -67,13 +67,14 @@ button {
   font-size: 16px;
   cursor: pointer;
   transition: background 0.3s ease;
+  align-items: center;
 }
 
 button:hover {
   background: #0056b3;
 }
 
-/* 🔹 Already have an account? */
+/*  Already have an account? */
 .auth-card p {
   font-size: 14px;
   color: #555;
@@ -89,15 +90,15 @@ button:hover {
   text-decoration: underline;
 }
 
-/* 🔹 Logo Styling */
+/*  Logo Styling */
 .spiway-logo {
   width: 80px;
   margin: 0 auto;
   display: block;
-  border-radius: 50%;
+  border-radius:50%;
 }
 
-/* 🔹 Welcome Text */
+/*  Welcome Text */
 .welcome-text {
   font-size: 20px;
   font-weight: bold;
@@ -105,7 +106,7 @@ button:hover {
   margin-top: 10px;
 }
 
-/* 🔹 Subtext */
+/*  Subtext */
 .welcome-subtext {
   font-size: 14px;
   color: #666;
@@ -159,6 +160,84 @@ button:hover {
 
   .auth-footer {
     font-size: 11px;
+  }
+}
+
+/* 🔹 Extra Small Screens (250px - 479px) */
+@media (max-width: 479px) {
+  .auth-card {
+    padding: 15px 25px 15px 15px; /* 🔥 Adjusted for very small screens */
+    width: 95%;
+  }
+
+  .auth-card h2 {
+    font-size: 18px;
+  }
+
+  .form-group input {
+    padding: 6px;
+    font-size: 12px;
+  }
+
+  button {
+    padding: 6px;
+    font-size: 13px;
+  }
+
+  .auth-footer {
+    font-size: 10px;
+  }
+}
+
+/* 🔹 Ultra Small Screens (250px - 320px) */
+@media (max-width: 320px) {
+  .auth-card {
+    padding: 12px 20px 12px 12px; /* 🔥 Adjusted further for tiny screens */
+    width: 100%;
+  }
+
+  .auth-card h2 {
+    font-size: 16px;
+  }
+
+  .form-group input {
+    padding: 5px;
+    font-size: 11px;
+  }
+
+  button {
+    padding: 5px;
+    font-size: 12px;
+  }
+
+  .auth-footer {
+    font-size: 9px;
+  }
+}
+
+/* 🔹 Medium-Small Screens (480px - 600px) */
+@media (min-width: 480px) and (max-width: 600px) {
+  .auth-card {
+    padding: 22px 35px 22px 22px; /* 🔥 Adjusted padding */
+    width: 85%;
+  }
+
+  .auth-card h2 {
+    font-size: 21px;
+  }
+
+  .form-group input {
+    padding: 9px;
+    font-size: 14px;
+  }
+
+  button {
+    padding: 9px;
+    font-size: 15px;
+  }
+
+  .auth-footer {
+    font-size: 12px;
   }
 }
 
