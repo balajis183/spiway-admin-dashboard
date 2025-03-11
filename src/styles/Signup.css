@@ -1,48 +1,39 @@
-/* Centering and Background */
+/* 🔹 Centering and Background */
 .auth-container {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background: url("../../public/assets/jess-bailey-UHqfUTDmdC4-unsplash.jpg") no-repeat center center;
-  background-size: cover;
+  background: url("../../public/assets/background.png") no-repeat center center / cover;
   padding: 20px;
 }
 
-/* Signup Card */
+/* 🔹 Signup Card */
 .auth-card {
-  background:rgba(194, 190, 190, 0.973);
-  background-color: transparent;
-  padding: 30px;
+  background: rgba(194, 190, 190, 0.973);
+  padding: 30px 50px 30px 30px; /* 🔥 Increased right padding */
   width: 100%;
-  max-width: 350px;
-  border-radius: 8px;
+  max-width: 400px;
+  border-radius: 20px;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
   text-align: center;
 }
 
-/* Signup Heading */
+/* 🔹 Signup Heading */
 .auth-card h2 {
   margin-bottom: 15px;
   font-size: 22px;
   color: #333;
 }
 
-/* Form Group */
+/* 🔹 Form Group */
 .form-group {
-  margin-bottom: 12px; /* Slightly reduced spacing */
+  margin-bottom: 12px;
   text-align: left;
+  padding-right: 10px; /* 🔥 Added extra right padding */
 }
 
-/* Form Labels */
-.form-group label {
-  display: block;
-  font-size: 14px;
-  color: #555;
-  margin-bottom: 3px; /* Small gap between label and input */
-}
-
-/* Form Inputs */
+/* 🔹 Form Input Fields */
 .form-group input {
   width: 100%;
   padding: 10px;
@@ -50,22 +41,22 @@
   border-radius: 4px;
   font-size: 14px;
   color: #333;
+  padding-right: 15px; /* 🔥 Increased right padding inside input */
 }
 
-/* Light Placeholder */
 .form-group input::placeholder {
   color: rgba(0, 0, 0, 0.3);
   font-size: 13px;
 }
 
-/* Error Message */
+/* 🔹 Error Message */
 .error-text {
   color: red;
   font-size: 13px;
   margin-top: 5px;
 }
 
-/* Signup Button */
+/* 🔹 Signup Button */
 button {
   width: 100%;
   padding: 10px;
@@ -82,7 +73,7 @@ button:hover {
   background: #0056b3;
 }
 
-/* Already have an account? */
+/* 🔹 Already have an account? */
 .auth-card p {
   font-size: 14px;
   color: #555;
@@ -98,17 +89,57 @@ button:hover {
   text-decoration: underline;
 }
 
-/* 🔥 Responsive Design */
+/* 🔹 Logo Styling */
+.spiway-logo {
+  width: 80px;
+  margin: 0 auto;
+  display: block;
+  border-radius: 50%;
+}
+
+/* 🔹 Welcome Text */
+.welcome-text {
+  font-size: 20px;
+  font-weight: bold;
+  color: #333;
+  margin-top: 10px;
+}
+
+/* 🔹 Subtext */
+.welcome-subtext {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 15px;
+}
+
+/* 🔹 Footer */
+.auth-footer {
+  margin-top: 15px;
+  font-size: 12px;
+  color: #777;
+  text-align: center;
+}
+
+.auth-footer a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.auth-footer a:hover {
+  text-decoration: underline;
+}
+
+/* 🔹 Responsive Design */
 @media (max-width: 768px) {
   .auth-card {
-    padding: 25px;
+    padding: 25px 40px 25px 25px; /* 🔥 Adjusted right padding for smaller screens */
     width: 90%;
   }
 }
 
 @media (max-width: 480px) {
   .auth-card {
-    padding: 20px;
+    padding: 20px 30px 20px 20px; /* 🔥 Adjusted for mobile */
     width: 100%;
   }
 
@@ -125,4 +156,10 @@ button:hover {
     padding: 8px;
     font-size: 14px;
   }
+
+  .auth-footer {
+    font-size: 11px;
+  }
 }
+
+

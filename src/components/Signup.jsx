@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "../styles/Signup.css";
+import spiwayLogo from "../assets/icon.png";  // Import the Spiway logo
+
 
 const Signup = () => {
   const [formData, setFormData] = useState({
@@ -33,6 +35,13 @@ const Signup = () => {
   return (
     <div className="auth-container">
       <div className="auth-card">
+        {/* 🏆 Spiway Logo */}
+        <img src={spiwayLogo} alt="Spiway Logo" className="spiway-logo" />
+
+        {/* 🎉 Welcome Message */}
+        <h3 className="welcome-text">Welcome to Spiway!</h3>
+        <p className="welcome-subtext">Create your account to access the admin dashboard.</p>
+
         <h2>Signup</h2>
         <form onSubmit={handleSubmit}>
           <div className="form-group">
@@ -91,6 +100,13 @@ const Signup = () => {
         <p>
           Already have an account? <Link to="/login">Login here</Link>
         </p>
+
+        {/* 📌 Footer */}
+        <div className="auth-footer">
+          <p>
+            By signing up, you agree to our <Link to="/terms">Terms & Conditions</Link> and <Link to="/privacy">Privacy Policy</Link>.
+          </p>
+        </div>
       </div>
     </div>
   );
