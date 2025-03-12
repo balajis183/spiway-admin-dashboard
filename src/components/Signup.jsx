@@ -27,7 +27,7 @@ const Signup = () => {
       setError("Passwords do not match!");
     } else {
       setError("");
-      alert("Signup Successful! Redirecting to login page.");
+      // alert("Signup Successful! Redirecting to login page.");
       setTimeout(() => {
         navigate("/login");
       }, 1000);
