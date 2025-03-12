@@ -28,8 +28,8 @@
   padding: 20px;
 
   animation: changeBackground 25s infinite linear;
-  animation-delay: 5s;  /*  Wait 5 seconds before starting */
-  transition: background-image 2s ease-in-out;
+  animation-delay: 10s;  /*  Wait 5 seconds before starting */
+  transition: background-image 3s cubic-bezier(0.19, 1, 0.22, 1);
 }
 
 
