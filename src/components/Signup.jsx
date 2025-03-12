@@ -2,9 +2,11 @@ import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "../styles/Signup.css";
 import spiwayLogo from "../assets/icon.png";  // Import the Spiway logo
+import useKeyboardAdjustment from "./useKeyboardAdjustment";
 
 
 const Signup = () => {
+  useKeyboardAdjustment();
   const [formData, setFormData] = useState({
     username: "",
     email: "",
