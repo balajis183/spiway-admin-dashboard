@@ -30,7 +30,7 @@ const Login = () => {
     }
 
     setError("");
-    alert("Login Successful! Redirecting to dashboard.");
+    // alert("Login Successful! Redirecting to dashboard.");
     setTimeout(() => {
       navigate("/dashboard");
     }, 1000);
