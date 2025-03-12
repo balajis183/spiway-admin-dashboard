@@ -1,20 +1,17 @@
 {
   "files": {
-    "main.css": "/spiway-admin-dashboard/static/css/main.d628507d.css",
+    "main.css": "/spiway-admin-dashboard/static/css/main.f988843f.css",
     "main.js": "/spiway-admin-dashboard/static/js/main.19b2732b.js",
     "static/js/453.3b2d1347.chunk.js": "/spiway-admin-dashboard/static/js/453.3b2d1347.chunk.js",
     "static/media/background-best.jpg": "/spiway-admin-dashboard/static/media/background-best.bf69ab38f1bcf686f8c7.jpg",
-    "static/media/background-13.jpg": "/spiway-admin-dashboard/static/media/background-13.557c4978aaac3d3428be.jpg",
-    "static/media/background -transtition.jpg": "/spiway-admin-dashboard/static/media/background -transtition.773b2d1abb6dec94f551.jpg",
-    "static/media/background-15.jpg": "/spiway-admin-dashboard/static/media/background-15.230058af5d84c43fe200.jpg",
     "static/media/icon.png": "/spiway-admin-dashboard/static/media/icon.7baafb1915046b2114dc.png",
     "index.html": "/spiway-admin-dashboard/index.html",
-    "main.d628507d.css.map": "/spiway-admin-dashboard/static/css/main.d628507d.css.map",
+    "main.f988843f.css.map": "/spiway-admin-dashboard/static/css/main.f988843f.css.map",
     "main.19b2732b.js.map": "/spiway-admin-dashboard/static/js/main.19b2732b.js.map",
     "453.3b2d1347.chunk.js.map": "/spiway-admin-dashboard/static/js/453.3b2d1347.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.d628507d.css",
+    "static/css/main.f988843f.css",
     "static/js/main.19b2732b.js"
   ]
 }
