@@ -63,7 +63,7 @@
 html, body {
   overflow: hidden;  /* Disable body scrolling */
   height: 100dvh;
-  max-width: 100%;
+  /* max-width: 100%; */
 }
 
 /* Ensure the main content scrolls properly */
