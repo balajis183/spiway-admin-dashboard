@@ -9,13 +9,13 @@
 } */
 
 
-@keyframes changeBackground {
+/* @keyframes changeBackground {
   0% { background-image: url("../../public/assets/background-best.jpg"); }
   25% { background-image: url("../../public/assets/background-13.jpg"); }
   50% { background-image: url("../../public/assets/background-15.jpg"); }
   75% { background-image: url("../../public/assets/background -transtition.jpg"); } 
   100% {background-image: url("../../public/assets/background-best.jpg")}
-}
+} */
 
 .auth-container {
   display: flex;
@@ -27,9 +27,9 @@
   background-position: center;
   padding: 20px;
 
-  animation: changeBackground 25s infinite linear;
-  animation-delay: 10s;  /*  Wait 5 seconds before starting */
-  transition: background-image 3s cubic-bezier(0.19, 1, 0.22, 1);
+  /* animation: changeBackground 25s infinite linear; */
+  /* animation-delay: 10s;   Wait 5 seconds before starting */
+  /* transition: background-image 3s cubic-bezier(0.19, 1, 0.22, 1); */
 }
 
 
