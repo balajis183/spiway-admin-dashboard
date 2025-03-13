@@ -11,6 +11,11 @@ const Header = () => {
       </div>
 
       <div className="header-right">
+        <label className="theme-switch">
+          <input type="checkbox" />
+          <span className="slider"></span>
+        </label>
+
         <FaBell className="icon notification-icon" title="Notifications" />
         <FaEnvelope className="icon contact-icon" title="Messages" />
         <FaQuestionCircle className="icon help-icon" title="Help & Support" />
