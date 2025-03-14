@@ -11,7 +11,7 @@
 /* Medium Screens (Tablets) */
 @media (max-width: 1024px) {
   .chart-container {
-      width: 95%;
+      width: 90%;
       margin: auto;
   }
 }
