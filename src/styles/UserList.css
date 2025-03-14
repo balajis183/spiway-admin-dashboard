@@ -3,8 +3,9 @@
   background: white;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  width: 100%;
+  width: 97%;
   padding: 10px;
+  padding-left: 20px;
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -108,7 +109,7 @@
   background: #f1f1f1;
 }
 
-/* 🔹 RESPONSIVE DESIGN 🔹 */
+/*  RESPONSIVE DESIGN  */
 
 /* Large Screens (Desktops & Laptops)
 @media (min-width: 1200px) {
@@ -126,6 +127,7 @@
 
   .users-controls {
     justify-content: center;
+    width: 95%;
   }
 
   .users-controls input {
@@ -152,11 +154,12 @@
   .users-controls {
     flex-direction: column;
     gap: 10px;
+    width: 85%;
   }
 
   .users-controls input,
   .users-controls select {
-    width: 100%;
+    width: 90%;
   }
 
   .users-table,
@@ -198,9 +201,11 @@
 
   .users-table .even-row {
     background: #f8f8f8;
+    width: 85%;
   }
 
   .users-table .odd-row {
     background: #ffffff;
+    width: 85%;
   }
 }

@@ -55,15 +55,16 @@
 
 /* Prevent double scrollbar */
 html, body {
-  overflow: hidden;  /* Disable body scrolling */
-  height: 100dvh;
+  /* overflow: hidden;  Disable body scrolling */
+  /* height: 100dvh; */
+  height: 100vh;
   /* max-width: 100%; */
 }
 
 /* Ensure the main content scrolls properly */
 .main-content {
-  overflow-y: auto;           /* Enables scrolling only inside main-content */
-  /* height: 100vh; */
-  min-height: 100vh;  
-  flex: 1; /* ✅ Takes remaining width */
+  /* overflow-y: auto;           Enables scrolling only inside main-content */
+  height: 100vh;
+  /* min-height: 100vh;   */
+  /* flex: 1; ✅ Takes remaining width */
 }
