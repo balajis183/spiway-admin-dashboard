@@ -55,7 +55,7 @@
 
 /* Prevent double scrollbar */
 html, body {
-   overflow: hidden;       /*Disable body scrolling */
+   /* overflow: hidden;       Disable body scrolling */
   /* height: 100dvh; */
   height: 100vh;
   /* max-width: 100%; */
