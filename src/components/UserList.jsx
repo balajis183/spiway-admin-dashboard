@@ -25,7 +25,7 @@ const UserList = () => {
 
   return (
     <div className="users-container">
-      <h2>User List</h2>
+      <h2>Users List</h2>
 
       {/* Search and Filter Row */}
       <div className="users-controls">
