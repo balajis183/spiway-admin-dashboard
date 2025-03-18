@@ -1,74 +1,122 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 import "../styles/UserList.css";
 
-const usersData = [
-  { id: 1, name: "John Doe", email: "john@example.com", role: "Admin", status: "Active", lastSeen: "2 hours ago" },
-  { id: 2, name: "Jane Smith", email: "jane@example.com", role: "User", status: "Inactive", lastSeen: "5 days ago" },
-  { id: 3, name: "Michael Brown", email: "michael@example.com", role: "User", status: "Active", lastSeen: "30 minutes ago" },
-  { id: 4, name: "Emily White", email: "emily@example.com", role: "Editor", status: "Active", lastSeen: "1 day ago" },
-  { id: 5, name: "David Johnson", email: "david@example.com", role: "User", status: "Inactive", lastSeen: "3 weeks ago" },
-  { id: 6, name: "Sophia Lee", email: "sophia@example.com", role: "Admin", status: "Active", lastSeen: "Just now" },
-  { id: 7, name: "Daniel Martinez", email: "daniel@example.com", role: "User", status: "Active", lastSeen: "4 hours ago" },
-  { id: 8, name: "Olivia Taylor", email: "olivia@example.com", role: "Editor", status: "Inactive", lastSeen: "2 days ago" },
-  { id: 9, name: "James Anderson", email: "james@example.com", role: "User", status: "Active", lastSeen: "10 minutes ago" },
-  { id: 10, name: "Emma Wilson", email: "emma@example.com", role: "Admin", status: "Active", lastSeen: "5 minutes ago" }
-];
+const API_URL = "https://spiway.in/app/app_users.php";
 
 const UserList = () => {
-  const [searchTerm, setSearchTerm] = useState("");
-  const [filterRole, setFilterRole] = useState("All");
+  const [users, setUsers] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+  const [currentPage, setCurrentPage] = useState(1);
+  const usersPerPage = 10;
 
-  const filteredUsers = usersData.filter(user => 
-    user.name.toLowerCase().includes(searchTerm.toLowerCase()) &&
-    (filterRole === "All" || user.role === filterRole)
-  );
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.post(API_URL);
+        console.log("API Response:", response.data);
+
+        if (Array.isArray(response.data)) {
+          setUsers(response.data);
+        } else if (response.data.users) {
+          setUsers(response.data.users);
+        } else {
+          setUsers([]);
+        }
+
+        setLoading(false);
+      } catch (error) {
+        console.error("Error fetching users:", error);
+        setError("Failed to fetch users");
+        setLoading(false);
+      }
+    };
+
+    fetchData();
+  }, []);
+
+  const formatLastLogin = (dateString) => {
+    if (!dateString) return "No recent activity";
+    const loginDate = new Date(dateString);
+    const now = new Date();
+    const diffTime = now - loginDate;
+    const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
+
+    if (diffDays < 1) return "Today";
+    if (diffDays === 1) return "Yesterday";
+    if (diffDays < 7) return `${diffDays} days ago`;
+    if (diffDays < 30) return `${Math.floor(diffDays / 7)} weeks ago`;
+    return "More than a month ago";
+  };
+
+  const totalPages = Math.ceil(users.length / usersPerPage);
+  const indexOfLastUser = currentPage * usersPerPage;
+  const indexOfFirstUser = indexOfLastUser - usersPerPage;
+  const currentUsers = users.slice(indexOfFirstUser, indexOfLastUser);
+
+  const nextPage = () => {
+    if (currentPage < totalPages) {
+      setCurrentPage(currentPage + 1);
+    }
+  };
+
+  const prevPage = () => {
+    if (currentPage > 1) {
+      setCurrentPage(currentPage - 1);
+    }
+  };
+
+  if (loading) return <p>Loading users...</p>;
+  if (error) return <p>Error: {error}</p>;
 
   return (
     <div className="users-container">
       <h2>Users List</h2>
-
-      {/* Search and Filter Row */}
-      <div className="users-controls">
-        <input 
-          type="text"
-          placeholder="Search users..."
-          value={searchTerm}
-          onChange={(e) => setSearchTerm(e.target.value)}
-        />
-        <label>Filter by:</label>
-        <select value={filterRole} onChange={(e) => setFilterRole(e.target.value)}>
-          <option value="All">All</option>
-          <option value="Admin">Admin</option>
-          <option value="User">User</option>
-          <option value="Editor">Editor</option>
-        </select>
-      </div>
-
-      {/* User Table */}
       <table className="users-table">
         <thead>
           <tr>
+            <th>ID</th>
             <th>Name</th>
-            <th>Email</th>
-            <th>Role</th>
+            <th>Phone</th>
             <th>Status</th>
-            <th>Last Seen</th>
+            <th>Last Login</th>
+            <th>Created Date</th>
+            <th>App Version</th>
           </tr>
         </thead>
         <tbody>
-          {filteredUsers.map((user, index) => (
-            <tr key={user.id} className={index % 2 === 0 ? "even-row" : "odd-row"}>
+          {currentUsers.map((user, index) => (
+            <tr key={user.user_id} className={index % 2 === 0 ? "even-row" : "odd-row"}>
+              <td>{user.user_id}</td>
               <td>{user.name}</td>
-              <td>{user.email}</td>
-              <td>{user.role}</td>
-              <td className={`status ${user.status.toLowerCase()}`}>{user.status}</td>
-              <td>{user.lastSeen}</td>
+              <td>{user.phone}</td>
+              <td className={
+                user.status === "ACTIVE" 
+                  ? "status active" 
+                  : user.status === "DELETE REQUEST" 
+                  ? "status deleted" 
+                  : "status inactive"
+              }>
+                {user.status === "DELETE REQUEST" ? "Deleted User" : user.status}
+              </td>
+              <td>{formatLastLogin(user.last_login)}</td>
+              <td>{user.created_date}</td>
+              <td>{user.app_version}</td>
             </tr>
           ))}
         </tbody>
       </table>
+      
+      <div className="pagination">
+        <button onClick={prevPage} disabled={currentPage === 1}>Previous</button>
+        <span> Page {currentPage} of {totalPages} </span>
+        <button onClick={nextPage} disabled={currentPage >= totalPages}>Next</button>
+      </div>
     </div>
   );
 };
 
 export default UserList;
+
+

@@ -1,211 +1,42 @@
-/* Container */
 .users-container {
-  background: white;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  width: 97%;
-  padding: 10px;
-  padding-left: 20px;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
+  padding: 20px;
+  font-family: Arial, sans-serif;
 }
 
-/* Title */
-.users-container h2 {
-  font-size: 24px;
-  font-weight: bold;
-  text-align: center;
-}
-
-/* Controls: Search & Filter */
-.users-controls {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-  padding: 10px;
-  background: #f9f9f9;
-  border-radius: 8px;
-  border: 1px solid #ddd;
-  justify-content: space-between;
-  flex-wrap: wrap;
-}
-
-.users-controls input {
-  flex: 1;
-  min-width: 200px;
-  padding: 8px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  font-size: 14px;
-}
-
-.users-controls label {
-  font-size: 14px;
-  font-weight: bold;
-  color: #333;
-}
-
-.users-controls select {
-  padding: 8px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  font-size: 14px;
-}
-
-/* Table */
 .users-table {
   width: 100%;
   border-collapse: collapse;
-  background: white;
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  margin-top: 10px;
+}
+
+.users-table th, .users-table td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: left;
 }
 
 .users-table th {
-  background: #f8f9fa;
-  font-size: 16px;
+  background-color: #f4f4f4;
+}
+
+.status {
   font-weight: bold;
-  text-transform: uppercase;
-  color: #333;
-  padding: 12px 15px;
-  text-align: left;
-  border-bottom: 2px solid #ddd;
+  padding: 5px 10px;
+  border-radius: 5px;
+  text-align: center;
 }
 
-.users-table td {
-  padding: 12px 15px;
-  border-bottom: 1px solid #ddd;
-  text-align: left;
-  white-space: nowrap;
-}
-
-/* Alternate Row Colors */
-.users-table .even-row {
-  background: #f9f9f9;
-}
-
-.users-table .odd-row {
-  background: #ffffff;
-}
-
-/* Status Column */
-.users-table td.status {
-  font-weight: bold;
-}
-
-/* Active & Inactive Colors */
 .status.active {
-  color: #28a745; /* Green */
+  background-color: #d4edda;
+  color: #155724;
+}
+
+.status.deleted {
+  background-color: #f8d7da;
+  color: #721c24;
 }
 
 .status.inactive {
-  color: #dc3545; /* Red */
-}
-
-/* Hover Effect */
-.users-table tr:hover {
-  background: #f1f1f1;
-}
-
-/*  RESPONSIVE DESIGN  */
-
-/* Large Screens (Desktops & Laptops)
-@media (min-width: 1200px) {
-  .users-container {
-    max-width: 1200px;
-    margin: auto;
-  }
-} */
-
-/* Medium Screens (Tablets & Small Laptops) */
-@media (max-width: 1024px) {
-  .users-container {
-    padding: 15px;
-  }
-
-  .users-controls {
-    justify-content: center;
-    width: 95%;
-  }
-
-  .users-controls input {
-    width: 40%;
-  }
-
-  .users-controls select {
-    width: 30%;
-  }
-
-  .users-table th,
-  .users-table td {
-    font-size: 14px;
-    padding: 10px;
-  }
-}
-
-/* Small Screens (Mobile Devices) */
-@media (max-width: 768px) {
-  .users-container {
-    padding: 10px;
-  }
-
-  .users-controls {
-    flex-direction: column;
-    gap: 10px;
-    width: 85%;
-  }
-
-  .users-controls input,
-  .users-controls select {
-    width: 90%;
-  }
-
-  .users-table,
-  .users-table thead {
-    display: block;
-    width: 100%;
-  }
-
-  .users-table tbody {
-    display: block;
-    width: 100%;
-  }
-
-  .users-table tr {
-    display: flex;
-    flex-direction: column;
-    background: #fff;
-    margin-bottom: 10px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 10px;
-  }
-
-  .users-table th {
-    display: none;
-  }
-
-  .users-table td {
-    display: flex;
-    justify-content: space-between;
-    padding: 8px 10px;
-    font-size: 14px;
-    border-bottom: none;
-  }
-
-  .users-table td:last-child {
-    border-bottom: none;
-  }
-
-  .users-table .even-row {
-    background: #f8f8f8;
-    width: 85%;
-  }
-
-  .users-table .odd-row {
-    background: #ffffff;
-    width: 85%;
-  }
+  background-color: #fff3cd;
+  color: #856404;
 }
