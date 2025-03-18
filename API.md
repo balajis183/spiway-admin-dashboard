@@ -86,13 +86,13 @@ HTTP (HyperText Transfer Protocol) defines methods that allow communication betw
 | **Definition** | Concept in database operations. | Actions used in web communication. |
 | **Usage**     | Used in databases like MySQL, MongoDB. | Used in RESTful APIs and web services. |
 | **Focus**     | Deals with how data is managed. | Deals with how data is transmitted over HTTP. |
-| **Example**   | `INSERT INTO users VALUES (...)` (SQL for Create). | `POST /users` (API request to create a user). |
+| **Example**   | db.users.insertOne({ name: "John", email: "john@example.com" }) (MongoDB for Create). | `POST /users` (API request to create a user). |
 | **Scope**     | Works at the database level. | Works at the network (client-server) level. |
 
 ## 6. Example to Understand the Difference
 1. In a **database (CRUD)**, if you want to create a user:
    ```sql
-   INSERT INTO users (name, email) VALUES ('John', 'john@example.com');
+   users.insertOne({ name: "John", email: "john@example.com" })
    ```
 2. In a **REST API (HTTP Methods)**, you send an HTTP request:
    ```http
