@@ -87,6 +87,9 @@
     .analytics-metrics {
       grid-template-columns: repeat(2, 1fr); /* 2 items per row */
     }
+    /* .chart-container{
+      background: #F5F5DC;
+    } */
   }
   
   @media (max-width: 768px) {
@@ -105,6 +108,9 @@
     .analytics-charts {
       grid-template-columns: repeat(1, 1fr); /* Stack charts */
     }
+    /* .chart-container{
+      background-color: #C9E4CA;
+    } */
   }
   
   @media (max-width: 480px) {

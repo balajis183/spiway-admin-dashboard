@@ -9,12 +9,15 @@ const UserList = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [currentPage, setCurrentPage] = useState(1);
-  const usersPerPage = 10;
+  const usersPerPage = 200;
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.post(API_URL);
+        const response = await axios.post(API_URL, {
+          page: 1,
+          limit: 200
+        });
         console.log("API Response:", response.data);
 
         if (Array.isArray(response.data)) {
@@ -118,5 +121,3 @@ const UserList = () => {
 };
 
 export default UserList;
-
-
