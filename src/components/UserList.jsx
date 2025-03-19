@@ -17,19 +17,9 @@ const UserList = () => {
     const fetchData = async () => {
       try {
         const response = await axios.post(API_URL, { page: 1, limit: 200 });
-        console.log("API Response:", response.data);
-
-        if (Array.isArray(response.data)) {
-          setUsers(response.data);
-        } else if (response.data.users) {
-          setUsers(response.data.users);
-        } else {
-          setUsers([]);
-        }
-
+        setUsers(response.data.users || []);
         setLoading(false);
       } catch (error) {
-        console.error("Error fetching users:", error);
         setError("Failed to fetch users");
         setLoading(false);
       }
@@ -40,11 +30,13 @@ const UserList = () => {
 
   const formatLastLogin = (dateString) => {
     if (!dateString) return "No recent activity";
-    return dateString; 
+    return dateString;
   };
 
   const filteredUsers = users
-    .filter((user) => user.name.toLowerCase().includes(searchQuery.toLowerCase()))
+    .filter((user) =>
+      user.name.toLowerCase().includes(searchQuery.toLowerCase())
+    )
     .sort((a, b) => (sortOrder === "asc" ? a.id - b.id : b.id - a.id));
 
   const totalPages = Math.ceil(filteredUsers.length / usersPerPage);
@@ -52,16 +44,8 @@ const UserList = () => {
   const indexOfFirstUser = indexOfLastUser - usersPerPage;
   const currentUsers = filteredUsers.slice(indexOfFirstUser, indexOfLastUser);
 
-  const nextPage = () => {
-    if (currentPage < totalPages) {
-      setCurrentPage(currentPage + 1);
-    }
-  };
-
-  const prevPage = () => {
-    if (currentPage > 1) {
-      setCurrentPage(currentPage - 1);
-    }
+  const goToPage = (page) => {
+    if (page >= 1 && page <= totalPages) setCurrentPage(page);
   };
 
   if (loading) return <p>Loading users...</p>;
@@ -70,7 +54,7 @@ const UserList = () => {
   return (
     <div className="users-container">
       <h2>Users List</h2>
-      
+
       <div className="controls">
         <input
           type="text"
@@ -83,12 +67,11 @@ const UserList = () => {
           <option value="asc">Sort by ID: Ascending</option>
         </select>
       </div>
-      
+
       <table className="users-table">
         <thead>
           <tr>
             <th>ID</th>
-            <th>User ID</th>
             <th>Name</th>
             <th>Phone</th>
             <th>Status</th>
@@ -98,19 +81,12 @@ const UserList = () => {
           </tr>
         </thead>
         <tbody>
-          {currentUsers.map((user, index) => (
-            <tr key={user.id} className={index % 2 === 0 ? "even-row" : "odd-row"}>
+          {currentUsers.map((user) => (
+            <tr key={user.id}>
               <td>{user.id}</td>
-              <td>{user.user_id}</td>
               <td>{user.name}</td>
               <td>{user.phone}</td>
-              <td className={
-                user.status === "ACTIVE" 
-                  ? "status active" 
-                  : user.status === "DELETE REQUEST" 
-                  ? "status deleted" 
-                  : "status inactive"
-              }>
+              <td className={`status ${user.status.toLowerCase().replace(" ", "-")}`}>
                 {user.status === "DELETE REQUEST" ? "Deleted User" : user.status}
               </td>
               <td>{formatLastLogin(user.last_login)}</td>
@@ -120,20 +96,42 @@ const UserList = () => {
           ))}
         </tbody>
       </table>
-      
-      <div className="pagination">
-        <button onClick={prevPage} disabled={currentPage === 1}>Previous</button>
-        {[...Array(totalPages)].map((_, i) => (
-          <button 
-            key={i + 1} 
-            className={currentPage === i + 1 ? "active" : ""} 
-            onClick={() => setCurrentPage(i + 1)}
-          >
-            {i + 1}
+
+      {/* Pagination */}
+      {filteredUsers.length > usersPerPage && (
+        <div className="pagination">
+          <button onClick={() => goToPage(1)} disabled={currentPage === 1}>
+            Home
           </button>
-        ))}
-        <button onClick={nextPage} disabled={currentPage >= totalPages}>Next</button>
-      </div>
+          <button onClick={() => goToPage(currentPage - 1)} disabled={currentPage === 1}>
+            Prev
+          </button>
+          
+          {Array.from({ length: 5 }, (_, i) => {
+            const page = currentPage - 2 + i;
+            if (page > 0 && page <= totalPages) {
+              return (
+                <button
+                  key={page}
+                  className={currentPage === page ? "active" : ""}
+                  onClick={() => goToPage(page)}
+                >
+                  {page}
+                </button>
+              );
+            }
+            return null;
+          })}
+          
+          <button onClick={() => goToPage(currentPage + 1)} disabled={currentPage === totalPages}>
+            Next
+          </button>
+          <button onClick={() => goToPage(totalPages)} disabled={currentPage === totalPages}>
+            Last
+          </button>
+        </div>
+      )}
+      
       <p>Total Pages: {totalPages}</p>
     </div>
   );
