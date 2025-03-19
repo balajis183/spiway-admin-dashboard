@@ -1,6 +1,14 @@
+/* UserList.css */
+
 .users-container {
   padding: 20px;
   font-family: Arial, sans-serif;
+}
+
+.controls {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
 }
 
 .users-table {
@@ -27,16 +35,38 @@
 }
 
 .status.active {
-  background-color: #d4edda;
-  color: #155724;
+  color: green;
 }
 
 .status.deleted {
-  background-color: #f8d7da;
-  color: #721c24;
+  color: red;
 }
 
 .status.inactive {
-  background-color: #fff3cd;
-  color: #856404;
+  color: orange;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.pagination button {
+  margin: 0 5px;
+  padding: 5px 10px;
+  border: 1px solid #ddd;
+  background: #3399ff;
+  cursor: pointer;
+}
+
+.pagination button.active {
+  font-weight: bold;
+  color: white;
+  background-color: green;
+}
+
+.pagination button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
 }

@@ -9,15 +9,14 @@ const UserList = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [currentPage, setCurrentPage] = useState(1);
-  const usersPerPage = 200;
+  const [sortOrder, setSortOrder] = useState("desc");
+  const [searchQuery, setSearchQuery] = useState("");
+  const usersPerPage = 10;
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.post(API_URL, {
-          page: 1,
-          limit: 200
-        });
+        const response = await axios.post(API_URL, { page: 1, limit: 200 });
         console.log("API Response:", response.data);
 
         if (Array.isArray(response.data)) {
@@ -41,22 +40,17 @@ const UserList = () => {
 
   const formatLastLogin = (dateString) => {
     if (!dateString) return "No recent activity";
-    const loginDate = new Date(dateString);
-    const now = new Date();
-    const diffTime = now - loginDate;
-    const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
-
-    if (diffDays < 1) return "Today";
-    if (diffDays === 1) return "Yesterday";
-    if (diffDays < 7) return `${diffDays} days ago`;
-    if (diffDays < 30) return `${Math.floor(diffDays / 7)} weeks ago`;
-    return "More than a month ago";
+    return dateString; 
   };
 
-  const totalPages = Math.ceil(users.length / usersPerPage);
+  const filteredUsers = users
+    .filter((user) => user.name.toLowerCase().includes(searchQuery.toLowerCase()))
+    .sort((a, b) => (sortOrder === "asc" ? a.id - b.id : b.id - a.id));
+
+  const totalPages = Math.ceil(filteredUsers.length / usersPerPage);
   const indexOfLastUser = currentPage * usersPerPage;
   const indexOfFirstUser = indexOfLastUser - usersPerPage;
-  const currentUsers = users.slice(indexOfFirstUser, indexOfLastUser);
+  const currentUsers = filteredUsers.slice(indexOfFirstUser, indexOfLastUser);
 
   const nextPage = () => {
     if (currentPage < totalPages) {
@@ -76,10 +70,25 @@ const UserList = () => {
   return (
     <div className="users-container">
       <h2>Users List</h2>
+      
+      <div className="controls">
+        <input
+          type="text"
+          placeholder="Search users by name..."
+          value={searchQuery}
+          onChange={(e) => setSearchQuery(e.target.value)}
+        />
+        <select onChange={(e) => setSortOrder(e.target.value)} value={sortOrder}>
+          <option value="desc">Sort by ID: Descending</option>
+          <option value="asc">Sort by ID: Ascending</option>
+        </select>
+      </div>
+      
       <table className="users-table">
         <thead>
           <tr>
             <th>ID</th>
+            <th>User ID</th>
             <th>Name</th>
             <th>Phone</th>
             <th>Status</th>
@@ -90,7 +99,8 @@ const UserList = () => {
         </thead>
         <tbody>
           {currentUsers.map((user, index) => (
-            <tr key={user.user_id} className={index % 2 === 0 ? "even-row" : "odd-row"}>
+            <tr key={user.id} className={index % 2 === 0 ? "even-row" : "odd-row"}>
+              <td>{user.id}</td>
               <td>{user.user_id}</td>
               <td>{user.name}</td>
               <td>{user.phone}</td>
@@ -113,9 +123,18 @@ const UserList = () => {
       
       <div className="pagination">
         <button onClick={prevPage} disabled={currentPage === 1}>Previous</button>
-        <span> Page {currentPage} of {totalPages} </span>
+        {[...Array(totalPages)].map((_, i) => (
+          <button 
+            key={i + 1} 
+            className={currentPage === i + 1 ? "active" : ""} 
+            onClick={() => setCurrentPage(i + 1)}
+          >
+            {i + 1}
+          </button>
+        ))}
         <button onClick={nextPage} disabled={currentPage >= totalPages}>Next</button>
       </div>
+      <p>Total Pages: {totalPages}</p>
     </div>
   );
 };
