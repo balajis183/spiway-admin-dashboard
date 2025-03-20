@@ -87,7 +87,8 @@ select {
   border-radius: 4px;
   min-width: 40px;
   text-align: center;
-  /* transition: all 0.2s ease-in-out;   */
+  transition: all 0.2s ease-in-out;  
+  width:50px;
 }
 
 .pagination button:hover {
@@ -97,13 +98,13 @@ select {
 .pagination .active {
   background-color: #007bff;
   color: white;
-  border-color: #007bff;
+  border-color: lightblue;
 }
 
 .pagination button:disabled {
-  opacity: 0.6;
+  opacity: 0.8;
   cursor: not-allowed;
   background-color: #ddd;
-  color: #888;
+  color: black;
   border-color: #ccc;
 }

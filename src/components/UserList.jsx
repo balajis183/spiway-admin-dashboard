@@ -73,11 +73,12 @@ const UserList = () => {
         <thead>
           <tr>
             <th>ID</th>
+            <th>USER ID</th>
             <th>Name</th>
             <th>Phone</th>
-            <th>Status</th>
             <th>Last Login</th>
             <th>Created Date</th>
+            <th>Status</th>
             <th>App Version</th>
           </tr>
         </thead>
@@ -85,14 +86,15 @@ const UserList = () => {
           {currentUsers.map((user) => (
             <tr key={user.id}>
               <td>{user.id}</td>
+              <td>{user.user_id}</td>
               <td>{user.name}</td>
               <td>{user.phone}</td>
+              <td>{formatLastLogin(user.last_login)}</td>
+              <td>{user.created_date}</td>
               <td className={`status ${user.status.toLowerCase().replace(" ", "-")}`}>
                 <span className="status-indicator"></span>
                 {user.status === "DELETE REQUEST" ? "DELETED USER" : user.status}
               </td>
-              <td>{formatLastLogin(user.last_login)}</td>
-              <td>{user.created_date}</td>
               <td>{user.app_version}</td>
             </tr>
           ))}
