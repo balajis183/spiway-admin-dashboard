@@ -49,7 +49,6 @@ const UserList = () => {
     if (page >= 1 && page <= totalPages) setCurrentPage(page);
   };
 
-  if (loading) return <p>Loading users...</p>;
   if (error) return <p>Error: {error}</p>;
 
   return (
@@ -82,27 +81,45 @@ const UserList = () => {
             <th>App Version</th>
           </tr>
         </thead>
-        <tbody>
-          {currentUsers.map((user) => (
-            <tr key={user.id}>
-              <td>{user.id}</td>
-              <td>{user.user_id}</td>
-              <td>{user.name}</td>
-              <td>{user.phone}</td>
-              <td>{formatLastLogin(user.last_login)}</td>
-              <td>{user.created_date}</td>
-              <td className={`status ${user.status.toLowerCase().replace(" ", "-")}`}>
-                <span className="status-indicator"></span>
-                {user.status === "DELETE REQUEST" ? "DELETED USER" : user.status}
-              </td>
-              <td>{user.app_version}</td>
-            </tr>
-          ))}
-        </tbody>
+
+        {loading ? (
+          <tbody>
+            {[...Array(10)].map((_, index) => (
+              <tr key={index} className="skeleton-row">
+                <td><div className="skeleton-box"></div></td>
+                <td><div className="skeleton-box"></div></td>
+                <td><div className="skeleton-box"></div></td>
+                <td><div className="skeleton-box"></div></td>
+                <td><div className="skeleton-box"></div></td>
+                <td><div className="skeleton-box"></div></td>
+                <td><div className="skeleton-box"></div></td>
+                <td><div className="skeleton-box"></div></td>
+              </tr>
+            ))}
+          </tbody>
+        ) : (
+          <tbody>
+            {currentUsers.map((user) => (
+              <tr key={user.id}>
+                <td>{user.id}</td>
+                <td>{user.user_id}</td>
+                <td>{user.name}</td>
+                <td>{user.phone}</td>
+                <td>{formatLastLogin(user.last_login)}</td>
+                <td>{user.created_date}</td>
+                <td className={`status ${user.status.toLowerCase().replace(" ", "-")}`}>
+                  <span className="status-indicator"></span>
+                  {user.status === "DELETE REQUEST" ? "DELETED USER" : user.status}
+                </td>
+                <td>{user.app_version}</td>
+              </tr>
+            ))}
+          </tbody>
+        )}
       </table>
 
       {/* Pagination */}
-      {filteredUsers.length > usersPerPage && (
+      {!loading && filteredUsers.length > usersPerPage && (
         <div className="pagination">
           <button onClick={() => goToPage(1)} disabled={currentPage === 1}>
             <FaHome />

@@ -32,7 +32,7 @@ const Login = () => {
     setError("");
     // alert("Login Successful! Redirecting to dashboard.");
     setTimeout(() => {
-      navigate("/dashboard");
+      navigate("/users");
     }, 1000);
   };
 
