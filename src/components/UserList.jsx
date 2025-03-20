@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "../styles/UserList.css";
+import { FaHome, FaArrowLeft, FaArrowRight } from "react-icons/fa";
 
 const API_URL = "https://spiway.in/app/app_users.php";
 
@@ -58,7 +59,7 @@ const UserList = () => {
       <div className="controls">
         <input
           type="text"
-          placeholder="Search users by name..."
+          placeholder="Search users by Name 🔎"
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
         />
@@ -87,7 +88,8 @@ const UserList = () => {
               <td>{user.name}</td>
               <td>{user.phone}</td>
               <td className={`status ${user.status.toLowerCase().replace(" ", "-")}`}>
-                {user.status === "DELETE REQUEST" ? "Deleted User" : user.status}
+                <span className="status-indicator"></span>
+                {user.status === "DELETE REQUEST" ? "DELETED USER" : user.status}
               </td>
               <td>{formatLastLogin(user.last_login)}</td>
               <td>{user.created_date}</td>
@@ -101,10 +103,10 @@ const UserList = () => {
       {filteredUsers.length > usersPerPage && (
         <div className="pagination">
           <button onClick={() => goToPage(1)} disabled={currentPage === 1}>
-            Home
+            <FaHome />
           </button>
           <button onClick={() => goToPage(currentPage - 1)} disabled={currentPage === 1}>
-            Prev
+            <FaArrowLeft />
           </button>
           
           {Array.from({ length: 5 }, (_, i) => {
@@ -124,10 +126,7 @@ const UserList = () => {
           })}
           
           <button onClick={() => goToPage(currentPage + 1)} disabled={currentPage === totalPages}>
-            Next
-          </button>
-          <button onClick={() => goToPage(totalPages)} disabled={currentPage === totalPages}>
-            Last
+            <FaArrowRight />
           </button>
         </div>
       )}

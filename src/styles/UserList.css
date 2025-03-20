@@ -38,29 +38,36 @@ select {
   background-color: #f4f4f4;
 }
 
-/* Status Colors */
+/* Status Column */
 .status {
-  font-weight: bold;
+  display: flex;
+  align-items: center;
   padding: 5px 10px;
-  border-radius: 5px;
-  text-align: center;
-  display: inline-block;
-  min-width: 80px;
+  /* border-radius: 5px; */
+  text-align: left;
+  /* width: 100%; */
+  font-weight: bold;
 }
 
-.status.active {
-  color: green;
+.status-indicator {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin-right: 8px;
 }
 
-.status.deleted {
-  color: red;
+.status.active .status-indicator {
+  background-color: green;
 }
 
-.status.inactive {
-  color: gray;
+.status.delete-request .status-indicator {
+  background-color: red ;
 }
 
-/* Pagination */
+.status.inactive .status-indicator {
+  background-color: gray;
+}
+
 /* Pagination */
 .pagination {
   display: flex;
@@ -74,29 +81,29 @@ select {
   padding: 6px 12px;
   font-size: 14px;
   border: 1px solid #ccc;
-  background-color: #f8f9fa; /* Light gray background */
-  color: #333; /* Dark gray text */
+  background-color: #f8f9fa;
+  color: #333;
   cursor: pointer;
   border-radius: 4px;
   min-width: 40px;
   text-align: center;
-  transition: all 0.2s ease-in-out;
+  /* transition: all 0.2s ease-in-out;   */
 }
 
 .pagination button:hover {
-  background-color: #e2e6ea; /* Slightly darker gray on hover */
+  background-color: #e2e6ea;
 }
 
 .pagination .active {
-  background-color: #007bff; /* Primary blue */
+  background-color: #007bff;
   color: white;
   border-color: #007bff;
 }
 
 .pagination button:disabled {
-  opacity: 0.5;
+  opacity: 0.6;
   cursor: not-allowed;
-  background-color: #f1f1f1;
-  color: #aaa;
-  border-color: #ddd;
+  background-color: #ddd;
+  color: #888;
+  border-color: #ccc;
 }
