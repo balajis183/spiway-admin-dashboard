@@ -48,9 +48,20 @@ const UserList = () => {
   const goToPage = (page) => {
     if (page >= 1 && page <= totalPages) setCurrentPage(page);
   };
-
-  if (error) return <p>Error: {error}</p>;
-
+  if (error) {
+    return (
+      <div className="error-container">
+        <p className="error-message">{error}</p>
+        <p className="error-hint">
+          This might be a network issue or a CORS restriction. If the issue persists, try using a Moesif CORS extension.
+        </p>
+        <button className="retry-button" onClick={() => window.location.reload()}>
+          Retry
+        </button>
+      </div>
+    );
+  }
+  
   return (
     <div className="users-container">
       <h2>Users List</h2>
