@@ -21,13 +21,37 @@ Spiway Admin Dashboard is a modern and interactive dashboard designed for the **
 - Shows essential statistics about the **Spiway application**, such as **total installs, daily installs, and active users**.
 - Clean and structured layout for better readability.
 
-### 👥 Users Section
-- Displays user details such as:
-  - **Name**
-  - **Email**
-  - **Role** (e.g., admin, user, moderator)
-  - **Status** (Active/Inactive)
-  - **Last Seen** (Displays the last active time instead of a timestamp)
+## 👥 Users Section  
+
+### 📌 Features  
+- Displays user details such as:  
+  - **ID**  
+  - **User ID**  
+  - **Name**  
+  - **Phone**  
+  - **Status** (Active, Inactive, or Deleted)  
+  - **Last Login** (Displays **actual date & time**)  
+  - **Created Date**  
+  - **App Version**  
+
+### 🔎 Search & Filters  
+- Users can **search by name** using the search bar at the top.  
+- Sort users by **ID (ascending/descending)** (default is descending).  
+
+### 📊 Table View  
+- Displays user data in a structured **table format**.  
+- **Status column** includes an indicator (🟢 Active, 🔴 Deleted, ⚫ Inactive).  
+- Uses **pagination** with `Home`, `Previous`, `Next` buttons (`FaHome`, `FaArrowLeft`, `FaArrowRight` icons).  
+- Table has **horizontal scrolling** on mobile for better readability.  
+
+### 🚀 Error Handling  
+- If data fetching fails:  
+  - A **styled error message** appears inside the main content (not overlapping the sidebar).  
+  - Possible causes: **Network issue or CORS restriction**.  
+  - Provides a **retry button** and a link to a **CORS extension** for troubleshooting.  
+
+### 🎭 Loading State  
+- Uses a **skeleton loader** with a shimmer effect for a smoother experience while data loads.  
 
 ### 📈 Analytics Section
 - Provides key performance metrics, including:
