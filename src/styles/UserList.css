@@ -125,44 +125,70 @@ select {
   100% { background-position: -200% 0; }
 }
 
+
+/* handling the API error */
+
 .error-container {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   text-align: center;
-  padding: 15px;
-  background: #ffe5e5;
-  border: 1px solid #ff6b6b;
+  background-color: #ffe5e5;
   color: #d9534f;
+  padding: 20px;
   border-radius: 8px;
-  width: 300px;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  max-width: 250px; /* Reduced width for better mobile fit */
+  margin: 50px auto; /* Keeps it centered */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  width: 70%; /* Ensures it adapts to mobile screens */
 }
 
 .error-message {
-  font-size: 16px;
+  font-size: 16px; /* Slightly reduced for better mobile fit */
   font-weight: bold;
+  margin-bottom: 10px;
 }
 
 .error-hint {
-  font-size: 13px;
-  color: #a94442;
-  margin-top: 8px;
+  font-size: 13px; /* Adjusted for readability on mobile */
+  color: #b94442;
+  margin-bottom: 15px;
 }
 
 .retry-button {
-  background-color: #ff6b6b;
+  padding: 8px 16px;
+  background-color: #d9534f;
   color: white;
   border: none;
-  padding: 8px 14px;
-  border-radius: 4px;
+  border-radius: 5px;
   cursor: pointer;
   font-size: 14px;
-  transition: background 0.3s;
-  margin-top: 10px;
+  transition: background 0.3s ease-in-out;
+  width: 100%; /* Makes the button full width for better tapability on mobile */
 }
 
 .retry-button:hover {
-  background-color: #e04e4e;
+  background-color: #c9302c;
+}
+
+/* Media Query for Mobile Responsiveness */
+@media (min-width: 600px) {
+  .error-container {
+    max-width: 350px; /* Slightly larger for tablets and desktops */
+    width: auto;
+  }
+
+  .error-message {
+    font-size: 18px;
+  }
+
+  .error-hint {
+    font-size: 14px;
+  }
+}
+
+
+a{
+text-decoration: none ;
 }

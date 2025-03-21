@@ -17,7 +17,7 @@ const UserList = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.post(API_URL, { page: 1, limit: 200 });
+        const response = await axios.post(API_URL, { page: 1, limit: 400 });
         setUsers(response.data.users || []);
         setLoading(false);
       } catch (error) {
@@ -53,8 +53,9 @@ const UserList = () => {
       <div className="error-container">
         <p className="error-message">{error}</p>
         <p className="error-hint">
-          This might be a network issue or a CORS restriction. If the issue persists, try using a Moesif CORS extension.
+          This might be a network issue or a CORS restriction from the API. If the issue persists, try using a Moesif CORS extension.
         </p>
+        <a href="https://chromewebstore.google.com/detail/digfbfaphojjndkpccljibejjbppifbc?utm_source=item-share-cb"> Add Moesif extension from here </a> <br />
         <button className="retry-button" onClick={() => window.location.reload()}>
           Retry
         </button>
