@@ -70,7 +70,7 @@ const UserList = () => {
       <div className="controls">
         <input
           type="text"
-          placeholder="Search users by Name 🔎"
+          placeholder="Search users by Name"
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
         />
